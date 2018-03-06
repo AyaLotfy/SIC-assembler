@@ -1,0 +1,37 @@
+BGN      START   0000    
+HALA     EQU     157
+
+         ORG     123
+         
+
+         LDA     =X'A188'
+         LDA     =C'ABGH'
+         
+         LTORG
+         LDA     =X'1237'
+
+         LDA     =C'H4'
+         LDA     =C'B85'
+
+         STA     BETA
+         J       *
+.
+THREE    WORD    3
+ALPHA    RESW    1
+BETA     RESW    1
+HAMSA    EQU     BETA-ALPHA
+BASANT   EQU     BETA-3
+
+
+
+WARDA    EQU     100+ALPHA
+
+
+
+         ORG     *
+         ORG     BETA-ALPHA
+
+         STA     BETA
+INCR     RESW    1
+
+         END     BGN

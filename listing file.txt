@@ -1,0 +1,73 @@
+>>source file
+
+
+1000    Prbn08   START   1000  
+1000             LDA     ZERO                   00114d
+1003             STA     INDEX                  c01153
+1006    LOOP     LDA     ZERO                   00114d
+1009             LDX     INDEX                  401153
+100c             STA     ALPHA,X                c901e
+100f             LDA     INDEX                  001153
+1012             ADD     THREE                  181150
+1015             STA     INDEX                  c01153
+1018             COMP    K300                   28114a
+101b             JLT     LOOP 		                381006
+101e    ALPHA    RESW    100
+114a    K300     WORD    300                    00012c
+114d    ZERO     WORD    0                      000000
+1150    THREE    WORD    3                      000003
+1153    INDEX    RESW    1
+1156             END     Prbn08
+
+
+
+>>symbol table
+
+
+Symbol    Address
+PRBN08    0000
+ZERO      114d
+LOOP      1006
+ALPHA     101e
+K300      114a
+INDEX     1153
+THREE     1150
+
+
+
+>>Optable
+
+
+Opcode  Code
+
+
+ADD     18
+STA     c
+TIX     2c
+LDA     0
+J       3c
+STL     14
+WD      dc
+COMP    28
+JLT     38
+LDL     8
+STX     10
+STCH    54
+LDX     4
+SUB     1c
+OR      44
+MUL     20
+RSUB    4c
+DIV     24
+TD      e0
+RD      d8
+JSUB    48
+JGT     34
+AND     40
+JEQ     30
+LDCH    50
+
+
+
+>>program Length
+157

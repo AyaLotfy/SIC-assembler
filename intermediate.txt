@@ -1,0 +1,97 @@
+>>source file
+
+
+0000    BGN      START   0000    
+0157    HALA     EQU     157
+0123             ORG     123
+0123             LDA     =X'A188'
+0126             LDA     =C'ABGH'
+0129             LTORG
+0129    *        =X'A188'
+012b    *        =C'ABGH'
+012f             LDA     =X'1237'
+0132             LDA     =C'H4'
+0135             LDA     =C'B85'
+0138             STA     BETA
+013b             J       *
+013e    THREE    WORD    3
+0141    ALPHA    RESW    1
+0144    BETA     RESW    1
+0003    HAMSA    EQU     BETA-ALPHA
+0141    BASANT   EQU     BETA-3
+0241    WARDA    EQU     100+ALPHA
+0241             ORG     *
+0003             ORG     BETA-ALPHA
+0003             STA     BETA
+0006    INCR     RESW    1
+0009             END     BGN
+0009    *        =X'1237'
+000b    *        =C'H4' 
+000d    *        =C'B85'
+
+
+
+>>symbol table
+
+
+Symbol    Address
+INCR      0006
+HAMSA     3
+BGN       0000
+ALPHA     0141
+BASANT    141
+WARDA     241
+HALA      157
+THREE     013e
+BETA      0144
+
+
+
+>>Literal table
+
+
+Literal    Val  Length  Address
+C'ABGH'      41424748   4   012b
+X'1237'      1237   2   0009
+X'A188'      A188   2   0129
+C'H4'        4834   2   000b
+C'B85'       423835   3   000d
+
+
+
+>>Optable
+
+
+Opcode  Code
+
+
+ADD     18
+STA     c
+TIX     2c
+LDA     0
+J       3c
+STL     14
+WD      dc
+COMP    28
+JLT     38
+LDL     8
+STX     10
+STCH    54
+LDX     4
+SUB     1c
+OR      44
+MUL     20
+RSUB    4c
+DIV     24
+TD      e0
+RD      d8
+JSUB    48
+JGT     34
+AND     40
+JEQ     30
+LDCH    50
+
+
+
+>>program Length
+a
